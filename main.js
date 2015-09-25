@@ -53,6 +53,7 @@ var WakeUp = (function(){
 	function configure() {
 		conf.targetTime = moment(DOM.setupTime.value, formating.inputTimeFormat);
 		conf.youtubeID = DOM.videoID.value;
+		Video.set(conf.youtubeID)
 	}
 
 	function bindEvents() {
