@@ -54,10 +54,15 @@ var WakeUp = (function(){
 	}
 
 	function bindEvents() {
+		/*
+			Bind any necessary event listener on the DOM elements.
+			Event listener is always fired when that particular event happens on the element
+			https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+		*/
+
 		DOM.updateSetup.addEventListener("click", function(event){
 			conf.targetTime = moment(DOM.setupTime.value, formating.inputTimeFormat);
 			conf.youtubeID = DOM.videoID.value;
-			Video.set(conf.youtubeID);
 		});
 	}
 
@@ -67,6 +72,8 @@ var WakeUp = (function(){
 		window.setInterval(function(){
 			update();
 		}, 1000) // update everything every second
+
+		document.querySelector("#app").removeAttribute("style"); // remove inline styles (display: none)
 	}
 
 

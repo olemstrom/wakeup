@@ -3,24 +3,69 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Wake me up!</title>
+
+	<!-- 
+		http://getbootstrap.com/getting-started/ 
+		Because ain't no one got time for CSS
+	-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<style>
+		#video {
+			margin-bottom: 15px;
+		}
+
+		.times {
+			margin-bottom : 15px; 
+			padding-bottom:15px; 
+			border-bottom: 1px solid #000;
+		}
+
+		.setup {
+			width:50%;
+		}
+
+		.setup label {
+			width: 30%;
+		}
+
+		.setup input {
+			width:69%;
+		}
+		.setup button {
+			width: 100%;
+			margin-top: 10px;
+		}
+	</style>
 </head>
 <body>
+	<!-- Keep app hidden until all js has loaded -->
+	<div id="app" class="container-fluid" style="display:none;">
+		<div id="video" class="col-xs-12">
+			vidya gon b here
+			<!-- Video will be inserted here once user has chosen one and youtube API has loaded it -->
+		</div>
 
-	<div id="video">
-		<!-- Video will be inserted here once user has chosen one and youtube API has loaded it -->
-	</div>
+		<div class="times text-center">
+			<h1>
+				Now: <span id="current-time"></span> <br/>
 
-	<div class="times">
-		Now: <span id="current-time"></span> <br/>
-		Alarm o' clock: <span id="alarm-time"></span>
-	</div>
+				<small>
+					Alarm o' clock: <span id="alarm-time"></span>
+				</small>
+			</h1>
+		</div>
 
-	<div class="setup">
-		<label>Time: <input type="time" name="time"/> </label> <br/>
-		<label>Youtube URL: <input type="text" name="video-id"></label> <br/>
-		<button>Update</button>
+		<div class="setup center-block" style="width: 50%;">
+			<label>Time: </label> <input type="time"name="time"/> <br/>
+			<label>Youtube Video ID: </label> <input type="text"name="video-id"> <br/>
+			<button>Update</button>
+		</div>
 	</div>
-	
 <script src="libs/moment.js"></script>
 <script src="main.js"></script>
 <script src="Video.js"></script>
