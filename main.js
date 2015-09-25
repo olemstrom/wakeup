@@ -47,7 +47,7 @@ var WakeUp = (function(){
 	}
 
 	function timeToWakeUp() {
-		return conf.now.isSame(conf.targetTime);
+		return conf.now.format(formating.timeFormat) == conf.targetTime.format(formating.timeFormat);
 	}
 
 	function configure() {

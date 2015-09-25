@@ -4,6 +4,7 @@ var Video = (function(){
 	function set(id) {
 		YT_videoID = id;
 		player.loadVideoById(id);
+		player.stopVideo();
 	}
 
 	function play() {
