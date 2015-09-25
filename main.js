@@ -19,7 +19,8 @@ var WakeUp = (function(){
 		alarmTime   : document.querySelector("#alarm-time"),
 		setupTime   : document.querySelector("[name=time]"),
 		videoID     : document.querySelector("[name=video-id]"),
-		updateSetup : document.querySelector(".setup button")
+		updateSetup : document.querySelector("[name=update]"),
+		testButton  : document.querySelector("[name=test]"),
 	}
 
 
@@ -63,6 +64,11 @@ var WakeUp = (function(){
 		DOM.updateSetup.addEventListener("click", function(event){
 			conf.targetTime = moment(DOM.setupTime.value, formating.inputTimeFormat);
 			conf.youtubeID = DOM.videoID.value;
+		});
+
+		DOM.testButton.addEventListener("click", function(event){
+			Video.set(DOM.videoID.value);
+			Video.play();
 		});
 	}
 
