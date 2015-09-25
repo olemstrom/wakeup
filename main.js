@@ -19,8 +19,11 @@ var WakeUp = (function(){
 	function update() {
 		var now = moment();
 		DOM.currentTime.innerHTML = now.format(formating.timeFormat);
-		DOM.alarmTime.innerHTML = conf.targetTime.format(formating.timeFormat);
-		
+		DOM.alarmTime.innerHTML = conf.targetTime.format(formating.timeFormat);		
+	}
+
+	function timeToWakeUp() {
+
 	}
 
 	function configure() {
@@ -35,6 +38,8 @@ var WakeUp = (function(){
 	}
 
 	function start() {
+		bindEvents();
+
 		DOM.setupTime.value = conf.targetTime.format(formating.inputTimeFormat);
 
 		window.setInterval(function(){
