@@ -29,6 +29,7 @@ var Video = (function(){
 	      		player = new YT.Player("video", {
          			width: '100%',
 				});
+				
 	      		WakeUp.start();	      	
 	      	}
 		},

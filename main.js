@@ -52,6 +52,7 @@ var WakeUp = (function(){
 
 	function configure() {
 		conf.targetTime = moment(DOM.setupTime.value, formating.inputTimeFormat);
+		conf.youtubeID = DOM.videoID.value;
 	}
 
 	function bindEvents() {
@@ -62,8 +63,7 @@ var WakeUp = (function(){
 		*/
 
 		DOM.updateSetup.addEventListener("click", function(event){
-			conf.targetTime = moment(DOM.setupTime.value, formating.inputTimeFormat);
-			conf.youtubeID = DOM.videoID.value;
+			configure();
 		});
 
 		DOM.testButton.addEventListener("click", function(event){
